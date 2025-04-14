@@ -1,0 +1,12 @@
+services:
+  socket-server:
+    build:
+      context: ./socket-server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./socket-server:/app
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+
